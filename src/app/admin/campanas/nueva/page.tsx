@@ -16,7 +16,7 @@ const esquema = z.object({
   meta_mxn: z.string().min(1, 'Requerido'),
   fecha_limite: z.string().optional(),
   imagen_url: z.string().optional(),
-  urgente: z.boolean().default(false),
+  urgente: z.boolean(),
 })
 type Campos = z.infer<typeof esquema>
 
