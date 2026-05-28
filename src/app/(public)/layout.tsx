@@ -1,0 +1,18 @@
+// app/(public)/layout.tsx
+// Layout para rutas públicas: incluye Header y Footer
+import { Header } from '@/components/shared/Header'
+import { Footer } from '@/components/shared/Footer'
+
+export default function PublicLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen">{children}</main>
+      <Footer />
+    </>
+  )
+}
