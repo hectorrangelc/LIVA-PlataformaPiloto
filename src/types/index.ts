@@ -138,6 +138,20 @@ export interface Campana {
   updated_at: string
 }
 
+// ── Apadrinamiento ─────────────────────────────────────────
+export interface Apadrinamiento {
+  id: string
+  user_id: string
+  animal_id: string
+  monto_mensual_mxn: number
+  activo: boolean
+  suscripcion_id?: string | null
+  fecha_inicio: string
+  fecha_fin?: string | null
+  created_at: string
+  animales?: { id: string; nombre: string; foto_principal: string | null } | null
+}
+
 // ── Evento ─────────────────────────────────────────────────
 export type TipoEvento = 'adopcion' | 'esterilizacion' | 'recaudacion' | 'voluntariado' | 'otro'
 
