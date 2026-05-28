@@ -56,7 +56,7 @@ export async function POST(req: Request) {
     })
   } catch (err) {
     if (err instanceof z.ZodError) {
-      return NextResponse.json({ error: err.errors[0].message }, { status: 400 })
+      return NextResponse.json({ error: err.issues[0].message }, { status: 400 })
     }
     console.error('[apadrinamientos/crear]', err)
     return NextResponse.json({ error: 'Error al crear el apadrinamiento' }, { status: 500 })

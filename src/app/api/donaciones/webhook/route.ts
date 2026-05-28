@@ -11,7 +11,7 @@ export async function POST(req: Request) {
       const pago = await paymentClient.get({ id: String(body.data.id) })
 
       if (pago.status === 'approved') {
-        const supabase = createAdminClient()
+        const supabase = await createAdminClient()
         const meta = pago.metadata as {
           campana_id?: string
           animal_id?: string
